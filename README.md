@@ -1,70 +1,60 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GitHub Topic Explorer by Claudia Pina
 
-## Available Scripts
+## Assignment:
 
-In the project directory, you can run:
+Your task is to build a React web application that displays all the "[topics](https://docs.github.com/en/free-pro-team@latest/graphql/reference/objects#topic)" related to the term "react", using the GitHub GraphQL API.
 
-### `npm start`
+The application should display how many "[stargazers](https://docs.github.com/en/free-pro-team@latest/graphql/reference/objects#stargazerconnection)" each topic has. A click on a topic should display the topics related to that topic, and how many stargazers they have. And so forth.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To interact with the Github GraphQL API you'll need to have
+  * a [Github API key](https://docs.github.com/en/free-pro-team@latest/graphql/guides/forming-calls-with-graphql#authenticating-with-graphql)
+  * You'll want to make use of the key in the .env file within your application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You may use whatever React framework or library you find useful. URL routing is optional.
 
-### `npm test`
+## Evaluation:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* We will pay particular attention to the way the code is organized, and to the overall readability
+* Unit tests will be greatly appreciated
+* Design will be ignored, however usability and accessibility will be taken into consideration
+* Remember to update this README with instructions on how to install, run and test your application
+* Your first goal is to have a working app, but feel free to improve the application however you see fit
+* We hope that you can complete the assignment within 2 hours but don't set any time constraints
+* Please reach out per email or by opening an issue if anything is unclear or blocking you
 
-### `npm run build`
+Best of luck!!!
+_________________________________________________________________________________________________________________________________________
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Dev Notes ###
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* I did the assignment using Styling Components, which i think is really useful when yo want to have the exact style for a component and reuse it everywhere you want.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* I also used ApolloClient created in a separate file (apollo-client.js) in src folder with the objective of having it in a 'global' manner to be able to use it in any other component or hook.
 
-### `npm run eject`
+* Having these last two points it is possible to create your separate functions or API calls as in /hooks/useTopics.js where basically the client already created is used here to do the query and the API call to Graphql to get the data that we request and return it as well.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### How to run app & test ###
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Clone the git repo or download the zip package.
+* Install npm packages by running `npm install`.
+* Get the .env file and create a new valid token to be able to run the application and use ApolloClient, 
+  assign your valid token to REACT_APP_GITHUB_API_TOKEN constant in .env file.
+* Run the app with `npm run start`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Future Improvements ###
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Code Structuring: in terms of the structure, is possible to do the application even more simpler adding the styled components in App.js file, we can use also props to assign to the components and display the elements with diferent styles or in the case if the component depends of any value and it needs to be different we can use that method.
 
-## Learn More
+* Refactoring: To refactor the application, by creating reusable components we can even use little less components that i created here, for example, is possible to eliminate the use of Footer.js and Header.js components due in this ones we are only using the styled components created for the header and footer, and the text to display is added just with this tag. We can add the same tag in App.js file where we are adding the Header and Footer as well. I just wanted to keep it like that to show that if i want to add other thing in those components out of the styled component i can add it easily and keep App.js as simple as possible. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Additional Features: As an additional feature i would add more components to show more details per topic by clicking the element, also, it would be fun to create some animations to display the stargazer count in each item, of course this takes more time to develop, but surely it would be incredible! 
+_________________________________________________________________________________________________________________________________________
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*** Let's check out some SS! ***
+--------------------------------------------------------------
+![Alt text](public/img01.jpeg)
+--------------------------------------------------------------
+![Alt text](public/img02.jpeg)
+--------------------------------------------------------------
+![Alt text](public/img03.jpeg)
